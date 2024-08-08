@@ -35,4 +35,4 @@ This project involves deploying a 2-tier application on the AWS Cloud using a Je
 
 This project combines infrastructure as code, containerization, and continuous integration/delivery to deploy and test a 2-tier application on AWS efficiently.
 
-#### This repository contains all the files used in this project, along with screenshots and a PDF report.
+#### This repository contains all the files used in this project, along with screenshots and a report.
