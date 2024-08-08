@@ -1,0 +1,58 @@
+pipeline {
+    agent any
+    parameters {
+        password(name: 'AIAW3MEDG23G4BTK6U')
+        password(name: '0XYjJOcXyyRsL4L6mxnpTH/GLo72rhNfDLpCIjk')
+    }
+    environment {
+        TF_WORKSPACE = 'dev' // Sets the Terraform Workspace
+        TF_IN_AUTOMATION = 'true'
+    }
+    stages {
+        stage('Terraform init') {
+            steps {
+                script {
+                    withCredentials([string(credentialsId: 'AKIAW3MEDG3TG4BTK6U', variable: 'AKIAWMEDG23TG4BTK6'),
+                                     string(credentialsId: '03XYjJOcXyyRsL4L6mxnpTH/Go72rhNfDLpCIjk', variable: '03XYjJOcyyRsL4L6mxnpTH/GLo72rhfDLpCIjk')]) {
+                        sh """
+                            cd /home/jashmeet/terraform_vpc/main.tf
+                            export AWS_ACCESS_KEY_ID=${AKAW3MED23TG4BTK6U}
+                            export AWS_SECRET_ACCESS_KEY=${3XYjJOcXyyRsL4L6mxnpTH/GLo72rhNfDLpCIjk}
+                            terraform init -input=false
+                        """
+                    }
+                }
+            }
+        }
+        stage('Terraform plan') {
+            steps {
+                script {
+                    withCredentials([string(credentialsId: 'AKIW3MEDG2TG4BTK6U', variable: 'AKIAW3MEG23TG4BTK6U'),
+                                     string(credentialsId: '03XYjJOcXyRsL4L6mxnpTHGLo72rhNfDLpCIjk', variable: '03XYjJOcXyyRL4L6mxnpTH/GLo72rhNfDLpCIjk')]) {
+                        sh """
+                            cd /home/jashmeet/terraform_vpc/main.tf
+                            export AWS_ACCESS_KEY_ID=${AIAW323TG4BTK6U}
+                            export AWS_SECRET_ACCESS_KEY=${03YjJOcXyyRL4L6mxnpTH/GLo72rhNfDLpCIjk}
+                            terraform plan -out=tfplan -input=false
+                        """
+                    }
+                }
+            }
+        }
+        stage('Terraform apply') {
+            steps {
+                script {
+                    withCredentials([string(credentialsId: 'AKIAWMEDGTK6UD', variable: 'KIAMEDG23TG4BTK6U'),
+                                     string(credentialsId: '03XYjJOcXyyR6mxnpTH/GLo72rhNfDLpCIjk', variable: '03XYjJOcXyy4L6mxnpTH/GLo72rhNfDLpCIjk')]) {
+                        sh """
+                            cd /home/jashmeet/terraform_vpc/main.tf
+                            export AWS_ACCESS_KEY_ID=${AKIEDG23TG4BTK6U}
+                            export AWS_SECRET_ACCESS_KEY=${3XYjJOcXyyRsL4L6mxn/GLo72rhNfDLpCIjk}
+                            terraform apply -input=false tfplan
+                        """
+                    }
+                }
+            }
+        }
+    }
+}
